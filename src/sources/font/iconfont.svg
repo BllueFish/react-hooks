@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="gaojing" unicode="&#58881;" d="M409.202 666.428c56.774 103.225 148.822 103.226 205.596 0l263.738-479.523C935.309 83.68 885.836 0 768.042 0H255.958c-117.798 0-167.267 83.68-110.494 186.905l263.738 479.523z m145.465-154.414c0 23.556-19.098 42.653-42.667 42.653-23.564 0-42.667-19.11-42.667-42.653v-213.361C469.333 275.096 488.431 256 512 256c23.564 0 42.667 19.109 42.667 42.653v213.36z m0-341.347h-85.334v-85.334h85.334v85.334z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

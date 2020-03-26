@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import App from "./app";
+import RouterConfig from "./router";
 
 ReactDOM.render(
-  <App />,
+  <RouterConfig />,
   document.getElementById('root')
 );
 

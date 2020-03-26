@@ -1,6 +1,7 @@
 ## React Hooks初次实战
 
 > 为了方便开发，项目公共数据放在store的global中，每个页面的 数据 和 接口连接 放在页面自身文件夹下的store和service中
+> react-router-dom 管理路由
 
 ## Available Scripts
 

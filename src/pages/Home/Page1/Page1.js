@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "antd";
-import "../../styles/style.less";
-import "./home.less";
+import "@/styles/style.less";
+import "../home.less";
 
-export default function Home() {
+export default function Page1() {
     let [visitCount, setVisitCount] = useState(1);
 
     return (

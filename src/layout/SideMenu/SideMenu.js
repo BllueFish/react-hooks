@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Menu, Icon, } from "antd";
+import { Menu } from "antd";
+import { Link } from "react-router-dom";
 
 const { SubMenu } = Menu;
 const Item = Menu.Item
@@ -9,8 +10,8 @@ export default function SideMenu() {
     let [selectedKey, setSelectedKey] = useState(["home1"]);
 
     function openChange(openKeys) {
+        if (openKeys.length === 0) return;
         let newKeys = openKeys.filter(i => curKeys.find(key => key !== i));
-        console.log(newKeys);
         setCurKeys(newKeys.length > 0 ? newKeys : openKeys);
     }
 
@@ -25,15 +26,14 @@ export default function SideMenu() {
         >
             <SubMenu
                 key="home"
-                title={
-                    <span>
-                        <Icon type="home" />
-                        <span>Home</span>
-                    </span>
-                }
+                title="Home"
             >
-                <Item key="home1">Home Page 1</Item>
-                <Item key="home2">Home Page 2</Item>
+                <Item key="home1">
+                    <Link to="/home">Home Page 1</Link>
+                </Item>
+                <Item key="home2">
+                    <Link to="/home/page2">Home Page 2</Link>
+                </Item>
             </SubMenu>
         </Menu>
     );

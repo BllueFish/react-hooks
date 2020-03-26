@@ -12,7 +12,7 @@ export default function Home() {
             <div>This is your {visitCount}'s click.</div>
             <Button
                 type="primary"
-                onClick={() => setVisitCount(visitCount++)}
+                onClick={() => setVisitCount(visitCount + 1)}
             >Click me</Button>
         </div>
     );

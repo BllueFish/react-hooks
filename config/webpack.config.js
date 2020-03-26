@@ -152,6 +152,7 @@ module.exports = function (webpackEnv) {
       // the line below with these two lines if you prefer the stock client:
       // require.resolve('webpack-dev-server/client') + '?/',
       // require.resolve('webpack/hot/dev-server'),
+      'react-hot-loader/patch',
       isEnvDevelopment &&
       require.resolve('react-dev-utils/webpackHotDevClient'),
       // Finally, this is your app's code:
@@ -300,6 +301,7 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        '@': path.resolve(__dirname, '..', 'src')
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -384,6 +386,8 @@ module.exports = function (webpackEnv) {
                       },
                     },
                   ],
+                  ['import', { libraryName: 'antd', style: 'css' }],
+                  'react-hot-loader/babel'
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/

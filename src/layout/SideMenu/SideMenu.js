@@ -25,11 +25,11 @@ export default function SideMenu() {
             onSelect={data => setSelectedKey(data.key)}
         >
             <SubMenu
-                key="home"
-                title="Home"
+                key="css"
+                title="CSS艺术之美"
             >
                 <Item key="home1">
-                    <Link to="/home">Home Page 1</Link>
+                    <Link to="/home">布局方式</Link>
                 </Item>
                 <Item key="home2">
                     <Link to="/home/page2">Home Page 2</Link>

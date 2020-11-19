@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <div className="body-top">
             <div className="user-info">
-                <span> Welcome to React Hooks, {userName}</span>
+                <span> Welcome to {userName}'s home</span>
                 <img className="user-head-icon" src={headIcon} alt="user-head" />
             </div>
         </div>

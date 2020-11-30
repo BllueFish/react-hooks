@@ -32,7 +32,7 @@ export default function SideMenu() {
                     <Link to="/home">布局方式</Link>
                 </Item>
                 <Item key="home2">
-                    <Link to="/home/page2">Home Page 2</Link>
+                    <Link to="/home/page2">函数计算</Link>
                 </Item>
             </SubMenu>
         </Menu>

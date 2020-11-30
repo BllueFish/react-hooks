@@ -1,0 +1,297 @@
+.info {
+    padding      : 5px;
+    margin-top   : 15px;
+    color        : rosybrown;
+    text-align   : center;
+    background   : rgb(220, 238, 210);
+    border-radius: 23px;
+}
+
+.hover-tips {
+    position        : relative;
+    padding         : 10px;
+    width           : 85px;
+    border-radius   : 10px;
+    background-color: #66f;
+    color           : #fff;
+
+    &+.hover-tips {
+        margin-top: 10px;
+        width     : 195px;
+    }
+
+    &.btn-1 {
+        &::after {
+            position        : absolute;
+            left            : 0;
+            top             : 0;
+            padding         : 10px;
+            border-radius   : 5px;
+            width           : 100px;
+            height          : 100%;
+            background-color: rgba(#000, .5);
+            opacity         : 0;
+            text-align      : center;
+            font-size       : 12px;
+            content         : attr(data-msg);
+            transition      : all 300ms;
+        }
+
+        &:hover::after {
+            left   : calc(100% + 20px);
+            opacity: 1;
+        }
+    }
+
+    &.btn-2:empty::after {
+        content: attr(data-msg);
+    }
+}
+
+.iterative-counter {
+    --check-color: #3c9;
+
+    ul {
+        counter-reset: index 0 count 0 weight 0;
+    }
+
+    li {
+        display          : flex;
+        position         : relative;
+        align-items      : center;
+        counter-increment: index 1;
+
+        &::before {
+            content: counter(index)"、";
+        }
+
+        &+li {
+            margin-top: 10px;
+        }
+    }
+
+    input {
+        overflow: hidden;
+        position: absolute;
+        width   : 0;
+        height  : 0;
+        opacity : 0;
+
+        &:checked+label::before {
+            color  : var(--check-color);
+            content: "\2713";
+        }
+    }
+
+    label {
+        display    : flex;
+        align-items: center;
+        height     : 20px;
+
+        &::before {
+            margin-right: 5px;
+            border      : 1px solid var(--check-color);
+            width       : 20px;
+            height      : 20px;
+            cursor      : pointer;
+            line-height : 20px;
+            text-align  : center;
+            color       : transparent;
+            content     : "";
+            transition  : all 300ms;
+        }
+    }
+
+    p {
+        margin-top: 10px;
+
+        &.count::after {
+            content: counter(count) attr(data-unit);
+        }
+
+        &.weight::after {
+            content: counter(weight) attr(data-unit);
+        }
+    }
+
+    #angular:checked {
+        counter-increment: count 1 weight 20;
+    }
+
+    #react:checked {
+        counter-increment: count 1 weight 50;
+    }
+
+    #vue:checked {
+        counter-increment: count 1 weight 30;
+    }
+}
+
+.strip-loading {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    width          : 100px;
+    height         : 100px;
+
+    li {
+        --time          : calc(var(--line-index) * 200ms);
+        border-radius   : 3px;
+        width           : 6px;
+        height          : 30px;
+        background-color: #f66;
+        animation       : beat 1.5s ease-in-out var(--time) infinite;
+
+        &+li {
+            margin-left: 5px;
+        }
+    }
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(.4);
+    }
+}
+
+.heart-loading {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    width          : 200px;
+    height         : 200px;
+
+    ul {
+        display        : flex;
+        justify-content: space-between;
+        width          : 150px;
+        height         : 10px;
+    }
+
+    li {
+        --color                  : calc(var(--line-index) / var(--line-count) * .8turn);
+        --time                   : calc(var(--line-index) * 30ms);
+        border-radius            : 5px;
+        width                    : 10px;
+        height                   : 10px;
+        background-color         : #3c9;
+        filter                   : hue-rotate(var(--color)); //色相旋转
+        animation-duration       : 1s;
+        animation-delay          : var(--time);
+        animation-iteration-count: infinite;
+
+        &+li {
+            margin-left: 2px;
+        }
+
+        &.line-1,
+        &.line-9 {
+            animation-name: beat1;
+        }
+
+        &.line-2,
+        &.line-8 {
+            animation-name: beat2;
+        }
+
+        &.line-3,
+        &.line-7 {
+            animation-name: beat3;
+        }
+
+        &.line-4,
+        &.line-6 {
+            animation-name: beat4;
+        }
+
+        &.line-5 {
+            animation-name: beat5;
+        }
+    }
+}
+
+@keyframes beat1 {
+
+    0%,
+    10%,
+    90%,
+    100% {
+        height: 10px;
+    }
+
+    45%,
+    50% {
+        height   : 30px;
+        transform: translate3d(0, -15px, 0);
+    }
+}
+
+@keyframes beat2 {
+
+    0%,
+    10%,
+    90%,
+    100% {
+        height: 10px;
+    }
+
+    45%,
+    50% {
+        height   : 60px;
+        transform: translate3d(0, -30px, 0);
+    }
+}
+
+@keyframes beat3 {
+
+    0%,
+    10%,
+    90%,
+    100% {
+        height: 10px;
+    }
+
+    45%,
+    50% {
+        height   : 80px;
+        transform: translate3d(0, -40px, 0);
+    }
+}
+
+@keyframes beat4 {
+
+    0%,
+    10%,
+    90%,
+    100% {
+        height: 10px;
+    }
+
+    45%,
+    50% {
+        height   : 90px;
+        transform: translate3d(0, -30px, 0);
+    }
+}
+
+@keyframes beat5 {
+
+    0%,
+    10%,
+    90%,
+    100% {
+        height: 10px;
+    }
+
+    45%,
+    50% {
+        height   : 90px;
+        transform: translate3d(0, -20px, 0);
+    }
+}

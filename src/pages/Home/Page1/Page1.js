@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { } from "antd";
 import "@/styles/style.less";
 import "./page1.less";
 

@@ -1,0 +1,102 @@
+.pasted-bg {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    height         : 300px;
+    background     : #000 url(../../../sources/images/bg1.png) no-repeat center top/auto 300px; // important
+    font-weight    : bold;
+    font-size      : 50px;
+    color          : #fff;
+}
+
+.hollow-text {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    height         : 200px;
+    background     : #000 url(../../../sources/images/bg1.png) no-repeat center top/auto 300px;
+    font-weight    : bold;
+    font-size      : 80px;
+    color          : transparent;
+    background-clip: text;
+}
+
+
+.gradient-bg {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    height         : 200px;
+    background     : linear-gradient(135deg, #f66, #f90, #3c9, #09f, #66f) left center/400% 400%;
+    animation      : move 5s infinite;
+}
+
+@keyframes move {
+
+    0%,
+    100% {
+        background-position-x: left;
+    }
+
+    50% {
+        background-position-x: right;
+    }
+}
+
+.gradient-text {
+    background-image: linear-gradient(135deg, #f66, #f90, #3c9, #09f, #66f);
+    font-size       : 80px;
+    line-height     : 80px;
+    color           : transparent;
+    background-clip : text;
+    animation       : hue 5s linear infinite;
+}
+
+@keyframes hue {
+    from {
+        filter: hue-rotate(0);
+    }
+
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.blink-text {
+    background-image     : linear-gradient(-45deg, #f90 30%, #fff 50%, #f90 70%);
+    background-size      : 200%;
+    background-clip      : text;
+    background-blend-mode: hard-light;
+    font-size            : 20px;
+    color                : transparent;
+    animation            : blink 2s infinite;
+}
+
+@keyframes blink {
+    from {
+        background-position: 100%;
+    }
+
+    to {
+        background-position: 0;
+    }
+}
+
+.square-bg {
+    width : 500px;
+    height: 300px;
+    background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%),
+        linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%);
+    background-position: 0 0, 20px 20px;
+    background-size    : 40px 40px;
+}
+
+.grid-bg {
+    width           : 500px;
+    height          : 300px;
+    background-color: #3c9;
+    background-image: linear-gradient(0deg, #fff 5%, transparent 5%, transparent),
+        linear-gradient(90deg, #fff 5%, transparent 5%, transparent);
+    background-position: 0 0, 20px 20px;
+    background-size    : 20px 20px;
+}

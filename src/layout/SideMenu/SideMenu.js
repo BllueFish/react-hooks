@@ -31,8 +31,17 @@ export default function SideMenu() {
                 <Item key="home1">
                     <Link to="/home">布局方式</Link>
                 </Item>
-                <Item key="home2">
-                    <Link to="/home/page2">函数计算</Link>
+                <Item key="function">
+                    <Link to="/home/function">函数计算</Link>
+                </Item>
+                <Item key="selector">
+                    <Link to="/home/selector">选择器</Link>
+                </Item>
+                <Item key="background">
+                    <Link to="/home/background">背景&遮罩</Link>
+                </Item>
+                <Item key="shadow">
+                    <Link to="/home/shadow">阴影&滤镜</Link>
                 </Item>
             </SubMenu>
         </Menu>

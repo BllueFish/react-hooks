@@ -1,0 +1,213 @@
+.specify-selector {
+    display: flex;
+
+    .list {
+        border     : 1px solid #f66;
+        width      : 200px;
+        line-height: 2;
+        font-weight: bold;
+        font-size  : 20px;
+        color      : #f66;
+
+        &+.list {
+            margin-left: 20px;
+        }
+
+        li {
+            padding: 0 10px;
+        }
+
+        .next {
+            background-color: #66f;
+            color           : #fff;
+
+            &+li {
+                background-color: #f90;
+                color           : #fff;
+            }
+        }
+
+        .next-all {
+            background-color: #66f;
+            color           : #fff;
+
+            &~li {
+                background-color: #09f;
+                color           : #fff;
+            }
+        }
+
+        .next-filter {
+            background-color: #66f;
+            color           : #fff;
+
+            &~.filter {
+                background-color: #09f;
+                color           : #fff;
+            }
+        }
+    }
+}
+
+.hover-tips {
+    display         : flex;
+    justify-content : space-between;
+    width           : 200px;
+    background-color: #fff;
+
+    li {
+        position       : relative;
+        padding        : 2px;
+        width          : 24px;
+        height         : 24px;
+        border         : 2px solid transparent;
+        border-radius  : 100%;
+        background-clip: content-box;
+        cursor         : pointer;
+        transition     : all 300ms;
+
+        &::before,
+        &::after {
+            position  : absolute;
+            left      : 50%;
+            bottom    : 100%;
+            opacity   : 0;
+            transform : translate3d(0, -30px, 0);
+            transition: all 300ms;
+        }
+
+        &::before {
+            margin          : 0 0 12px -35px;
+            border-radius   : 5px;
+            width           : 70px;
+            height          : 30px;
+            background-color: rgba(#000, .5);
+            line-height     : 30px;
+            text-align      : center;
+            color           : #fff;
+            content         : attr(data-name);
+        }
+
+        &::after {
+            margin-left     : -6px;
+            border          : 6px solid transparent;
+            border-top-color: rgba(#000, .5);
+            width           : 0;
+            height          : 0;
+            content         : "";
+        }
+
+        &:nth-child(1) {
+            &:hover {
+                border-color: #f66;
+            }
+        }
+
+        &:nth-child(2) {
+            &:hover {
+                border-color: #66f;
+            }
+        }
+
+        &:nth-child(3) {
+            &:hover {
+                border-color: #f90;
+            }
+        }
+
+        &:nth-child(4) {
+            &:hover {
+                border-color: #09f;
+            }
+        }
+
+        &:nth-child(5) {
+            &:hover {
+                border-color: #3c9;
+            }
+        }
+
+        &:hover {
+
+            &::before,
+            &::after {
+                opacity  : 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+}
+
+.form-validation {
+    width: 500px;
+
+    div+div {
+        margin-top: 10px;
+    }
+
+    label {
+        display       : block;
+        padding-bottom: 5px;
+        font-weight   : bold;
+        font-size     : 16px;
+    }
+
+    input,
+    textarea {
+        display    : block;
+        padding    : 0 20px;
+        border     : 1px solid #ccc;
+        width      : 100%;
+        height     : 40px;
+        outline    : none;
+        caret-color: #09f;
+        transition : all 300ms;
+
+        &:valid {
+            border-color: #3c9;
+        }
+
+        &:invalid {
+            border-color: #f66;
+        }
+    }
+
+    textarea {
+        height     : 122px;
+        resize     : none;
+        line-height: 30px;
+        font-size  : 16px;
+    }
+}
+
+.empty-list {
+    overflow: auto;
+    width   : 200px;
+    height  : 150px;
+    outline : 1px solid #3c9;
+
+    &+.empty-list {
+        margin-left: 20px;
+    }
+
+    &:empty {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        background     : url("../../../sources/images/empty/empty-s2.png") no-repeat center/100px auto;
+
+        &::after {
+            content   : "No Data";
+            margin-top: 90px;
+            color     : orange;
+        }
+    }
+
+    li {
+        padding         : 0 10px;
+        height          : 30px;
+        background-color: #09f;
+        line-height     : 30px;
+        color           : #fff;
+    }
+}

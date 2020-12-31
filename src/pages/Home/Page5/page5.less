@@ -1,0 +1,40 @@
+.shadow {
+    margin : 50px 25px 0 25px;
+    display: inline-block;
+    border : 1px solid #f66;
+    width  : 200px;
+    height : 200px;
+
+    &.left {
+        box-shadow: -10px 0 5px -5px #f66;
+    }
+
+    &.right {
+        box-shadow: 10px 0 5px -5px #f66;
+    }
+
+    &.up {
+        box-shadow: 0 -10px 5px -5px #f66;
+    }
+
+    &.down {
+        box-shadow: 0 10px 5px -5px #f66;
+    }
+
+    &.left-up {
+        box-shadow: -10px 0 5px -5px #f66, 0 -10px 5px -5px #f66;
+    }
+
+    &.left-down {
+        box-shadow: -10px 0 5px -5px #f66, 0 10px 5px -5px #f66;
+    }
+
+    &.right-up {
+        box-shadow: 10px 0 5px -5px #f66, 0 -10px 5px -5px #f66;
+    }
+
+    &.right-down {
+        box-shadow: 10px 0 5px -5px #f66, 0 10px 5px -5px #f66;
+    }
+
+}

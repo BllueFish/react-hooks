@@ -1,17 +1,62 @@
 import React from 'react';
 import SideMenu from './layout/SideMenu/SideMenu';
 import Top from "./layout/Top/Top";
-import Page1 from "@/pages/Home/Page1/Page1";
-import Page2 from "@/pages/Home/Page2/Page2";
-import Page3 from "@/pages/Home/Page3/Page3";
-import Page4 from "@/pages/Home/Page4/Page4";
-import Page5 from "@/pages/Home/Page5/Page5";
+import LayoutPage from "@/pages/Css/Layout";
+import FunctionPage from "@/pages/Css/Function";
+import Selector from "@/pages/Css/Selector";
+import Background from "@/pages/Css/Background";
+import Shadow from "@/pages/Css/Shadow";
+import Translate from "@/pages/Css/Translate";
 import { Layout } from "antd";
 import { hot } from "react-hot-loader";
 import "./styles/style.less";
-import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
+import { menuTree } from "@/utils/common";
 
 const { Sider, Content } = Layout;
+const getPath = (menuKey) => {
+    let pages = [];
+    switch (menuKey) {
+        case "css":
+            pages = [
+                {
+                    url: "/css/layout",
+                    component: LayoutPage
+                },
+                {
+                    url: "/css/function",
+                    component: FunctionPage
+                },
+                {
+                    url: "css/selector",
+                    component: Selector
+                },
+                {
+                    url: "/css/background",
+                    component: Background
+                },
+                {
+                    url: "/css/shadow",
+                    component: Shadow
+                },
+                {
+                    url: "/css/translate",
+                    component: Translate
+                },
+            ];
+            break;
+        default: break;
+    }
+
+    return pages;
+};
+let routers = [];
+menuTree.map(item => getPath(item.key)).forEach(item => {
+    item.forEach(subItem => {
+        let route = <Route key={subItem.url} path={subItem.url} exact component={subItem.component} />;
+        routers.push(route);
+    });
+});
 
 function App(props) {
     return (
@@ -24,11 +69,8 @@ function App(props) {
                     </Sider>
                     <Content className="base-layout-content">
                         <Switch>
-                            <Route path="/home" exact component={Page1} />
-                            <Route path="/home/function" component={Page2} />
-                            <Route path="/home/selector" component={Page3} />
-                            <Route path="/home/background" component={Page4} />
-                            <Route path="/home/shadow" component={Page5} />
+                            {routers}
+                            <Redirect from="/*" to="/css/layout" />
                         </Switch>
                     </Content>
                 </Layout>

@@ -2,7 +2,7 @@ import React from 'react';
 import "./styles/style.less";
 import App from "./app";
 import { createHashHistory } from "history";
-import { Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route, Redirect } from "react-router-dom";
 
 const history = createHashHistory();
 

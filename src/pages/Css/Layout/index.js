@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "@/styles/style.less";
 import "./page1.less";
 
-export default function Page1() {
+const Layout = () => {
 
     return (
         <>
@@ -67,4 +67,5 @@ export default function Page1() {
             </div>
         </>
     );
-}
+};
+export default Layout;

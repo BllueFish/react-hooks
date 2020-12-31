@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "@/styles/style.less";
 import "./page4.less";
 
-export default function Page4() {
+export default function Background() {
 
     return (
         <>

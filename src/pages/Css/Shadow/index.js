@@ -4,7 +4,7 @@ import "./page5.less";
 
 const bg1 = require("@/sources/images/bg1.png");
 
-export default function Page5() {
+export default function Shadow() {
 
     return (
         <>

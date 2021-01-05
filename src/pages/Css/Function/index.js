@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "@/styles/style.less";
 import "./page2.less";
 
-export default function Page2() {
+export default function Index() {
 
     return (
         <>

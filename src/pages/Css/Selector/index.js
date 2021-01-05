@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "@/styles/style.less";
 import "./page3.less";
 
-export default function Page3() {
+export default function Selector() {
 
     return (
         <>

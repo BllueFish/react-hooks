@@ -1,0 +1,91 @@
+.heart-shape {
+    margin          : 50px auto;
+    width           : 100px;
+    height          : 100px;
+    background-color: #f66;
+    transform       : rotate(45deg);
+
+    &::before,
+    &::after {
+        position        : absolute;
+        top             : 0;
+        left            : 0;
+        width           : 100%;
+        height          : 100%;
+        background-color: #f66;
+        border-radius   : 100%;
+        content         : "";
+    }
+
+    &::after {
+        transform: translateX(-50%);
+    }
+
+    &::before {
+        transform: translateY(-50%);
+    }
+}
+
+.onepx-border {
+    margin     : 0 auto;
+    width      : 200px;
+    height     : 80px;
+    line-height: 80px;
+    text-align : center;
+    font-weight: bold;
+    font-size  : 50px;
+    color      : #66f;
+
+    &+.onepx-border {
+        margin-top: 10px;
+    }
+
+    &.normal {
+        border: 1px solid #66f;
+    }
+
+    &.thin {
+        position: relative;
+
+        &::after {
+            position        : absolute;
+            left            : 0;
+            top             : 0;
+            border          : 1px solid #66f;
+            width           : 200%;
+            height          : 200%;
+            content         : "";
+            transform       : scale(.5);
+            transform-origin: top left;
+        }
+    }
+}
+
+.mixin(@count: 0, @duration: 0s, @delay: 0s) {
+    width: @count + 1ch;
+    animation: typing @duration steps(@count + 1) @delay infinite backwards,
+        caret 500ms steps(1) @delay infinite forwards;
+}
+
+.auto-typing {
+    font-weight : bold;
+    font-size   : 30px;
+    color       : #09f;
+    overflow    : hidden;
+    border-right: 1px solid transparent;
+    font-family : Consolas, Monaco, monospace;
+    white-space : nowrap;
+    .mixin(52, 5s);
+}
+
+@keyframes caret {
+    50% {
+        border-right-color: currentColor;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}

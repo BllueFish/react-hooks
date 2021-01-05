@@ -7,8 +7,8 @@ const { SubMenu } = Menu;
 const Item = Menu.Item;
 
 export default function SideMenu() {
-    let [curKeys, setCurKeys] = useState(["home"]);
-    let [selectedKey, setSelectedKey] = useState(["home"]);
+    let [curKeys, setCurKeys] = useState(["css"]);
+    let [selectedKey, setSelectedKey] = useState(["Layout"]);
 
     function openChange(openKeys) {
         if (openKeys.length === 0) return;

@@ -7,6 +7,7 @@ import Selector from "@/pages/Css/Selector";
 import Background from "@/pages/Css/Background";
 import Shadow from "@/pages/Css/Shadow";
 import Translate from "@/pages/Css/Translate";
+import ChangeComponent from "@/pages/Css/ChangeComponent";
 import { Layout } from "antd";
 import { hot } from "react-hot-loader";
 import "./styles/style.less";
@@ -42,6 +43,10 @@ const getPath = (menuKey) => {
                 {
                     url: "/css/translate",
                     component: Translate
+                },
+                {
+                    url: "/css/exercise/change",
+                    component: ChangeComponent
                 },
             ];
             break;

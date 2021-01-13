@@ -37,6 +37,11 @@ const menuTree = [
                 key: "Translate",
                 url: "/css/translate",
                 name: "变换&动画"
+            },
+            {
+                key: "ChangeComponent",
+                url: "/css/exercise/change",
+                name: "切换控件"
             }
         ]
     },

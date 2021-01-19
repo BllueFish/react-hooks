@@ -42,6 +42,11 @@ const menuTree = [
                 key: "ChangeComponent",
                 url: "/css/exercise/change",
                 name: "切换控件"
+            },
+            {
+                key: "BorderTransition",
+                url: "/css/border",
+                name: "边框动画"
             }
         ]
     },

@@ -8,6 +8,7 @@ import Background from "@/pages/Css/Background";
 import Shadow from "@/pages/Css/Shadow";
 import Translate from "@/pages/Css/Translate";
 import ChangeComponent from "@/pages/Css/ChangeComponent";
+import BorderTransition from "@/pages/Css/BorderTransition";
 import { Layout } from "antd";
 import { hot } from "react-hot-loader";
 import "./styles/style.less";
@@ -48,6 +49,10 @@ const getPath = (menuKey) => {
                     url: "/css/exercise/change",
                     component: ChangeComponent
                 },
+                {
+                    url: "/css/border",
+                    component: BorderTransition
+                }
             ];
             break;
         default: break;

@@ -205,3 +205,49 @@
         clip-path: inset(0 0 0 98%);
     }
 }
+
+.overflow-border {
+    position   : relative;
+    margin     : auto;
+    width      : 200px;
+    height     : 100px;
+    line-height: 100px;
+    text-align : center;
+    overflow   : hidden;
+
+    &::after {
+        content         : "Hover";
+        position        : absolute;
+        top             : 4px;
+        left            : 4px;
+        right           : 4px;
+        bottom          : 4px;
+        line-height     : 92px;
+        font-size       : 24px;
+        color           : yellowgreen;
+        border          : 2px solid yellowgreen;
+        background-color: #fff;
+        cursor          : pointer;
+    }
+
+    &::before {
+        content                   : "";
+        position                  : absolute;
+        top                       : 0;
+        bottom                    : 0;
+        right                     : -20px;
+        left                      : 0;
+        background-color          : #fff;
+        transform                 : rotateZ(-90deg) translate(-100%, -100%);
+        transform-origin          : top left;
+        transition                : transform .3s;
+        transition-timing-function: linear;
+    }
+
+    // &:hover {
+    //     filter: contrast(1.2);
+    // }
+    &:hover::before {
+        transform: rotateZ(0deg) translate(0%, -0%);
+    }
+}

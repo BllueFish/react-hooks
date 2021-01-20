@@ -19,6 +19,10 @@ export default function Background() {
             </div>
             <p className='info'>border跟随动画</p>
             <div className="clip-path-border"></div>
+            <p className='info'>overflow实现动态边框</p>
+            <div style={{ backgroundColor: "yellowgreen", padding: 20 }}>
+                <div className="overflow-border"></div>
+            </div>
         </>
     );
 }

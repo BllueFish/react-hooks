@@ -53,7 +53,33 @@ const menuTree = [
     {
         key: "react",
         name: "React进阶",
-        children: []
+        children: [
+            {
+                key: "LineCanvas1",
+                url: "/react/lineCanvas/1",
+                name: "LineCanvas1"
+            },
+            {
+                key: "LineCanvas2",
+                url: "/react/lineCanvas/2",
+                name: "LineCanvas2"
+            },
+            {
+                key: "Dashed",
+                url: "/react/dashed",
+                name: 'Dashed'
+            },
+            {
+                key: "PolyLine",
+                url: "/react/polyLine",
+                name: 'PolyLine'
+            },
+            {
+                key: 'Circle',
+                url: "/react/circle",
+                name: 'Circle'
+            },
+        ]
     }
 ];
 

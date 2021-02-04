@@ -9,6 +9,11 @@ import Shadow from "@/pages/Css/Shadow";
 import Translate from "@/pages/Css/Translate";
 import ChangeComponent from "@/pages/Css/ChangeComponent";
 import BorderTransition from "@/pages/Css/BorderTransition";
+import LineCanvas1 from '@/pages/React/LineCanvas1';
+import LineCanvas2 from '@/pages/React/LineCanvas2';
+import Dashed from '@/pages/React/Dashed';
+import PolyLine from '@/pages/React/PolyLine';
+import Circle from '@/pages/React/Circle';
 import { Layout } from "antd";
 import { hot } from "react-hot-loader";
 import "./styles/style.less";
@@ -53,6 +58,30 @@ const getPath = (menuKey) => {
                     url: "/css/border",
                     component: BorderTransition
                 }
+            ];
+            break;
+        case "react":
+            pages = [
+                {
+                    url: "/react/lineCanvas/1",
+                    component: LineCanvas1
+                },
+                {
+                    url: "/react/lineCanvas/2",
+                    component: LineCanvas2
+                },
+                {
+                    url: "/react/dashed",
+                    component: Dashed
+                },
+                {
+                    url: "/react/polyLine",
+                    component: PolyLine
+                },
+                {
+                    url: "/react/circle",
+                    component: Circle
+                },
             ];
             break;
         default: break;
